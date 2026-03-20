@@ -1,0 +1,97 @@
+:root {
+  --forest-deep: #0f1f14;
+  --forest-dark: #1a3322;
+  --forest-mid: #2f4f3a;
+  --forest-green: #4c7153;
+  --moss: #7a9e7e;
+  --sage: #a8c5a0;
+  --cream: #f0ede6;
+  --warm-white: #faf9f6;
+  --gold: #c9a96e;
+  --gold-light: #e8d5a3;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 1rem;
+  padding: 1rem;}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--forest-deep);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Grain overlay ─────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* ── Ambient radial glow ───────────────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 700px;
+  max-height: 700px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(76, 113, 83, 0.18) 0%,
+    rgba(47, 79, 58, 0.08) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Portfolio Styles ─────────────────────────── */
+
+.landscape-collage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ── Heading Styles ─────────────────────────── */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--gold);
+  text-shadow: 0 0 5px rgba(201, 169, 110, 0.8);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
+  color: var(--gold-light);
+  text-shadow: 0 0 3px rgba(232, 213, 163, 0.7);
+}
