@@ -24,7 +24,8 @@ body {
   min-height: 100%;
   width: 100%;
   margin: 1rem;
-  padding: 1rem;}
+  padding: 1rem;
+}
 
 body {
   font-family: "DM Sans", sans-serif;
@@ -72,42 +73,108 @@ body::after {
   z-index: 0;
 }
 
-/* ── Portfolio Styles ─────────────────────────── */
-
-.landscape-collage {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-/* ── Image Styles ─────────────────────────── */
-
-
-.general img,
-.norway img {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.general img:hover,
-.norway img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
 /* ── Heading Styles ─────────────────────────── */
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: var(--gold);
   text-shadow: 0 0 5px rgba(201, 169, 110, 0.8);
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 h2 {
   font-size: 1.8rem;
-  margin: 20px 0 10px;
+  margin: 20px 0 20px;
   color: var(--gold-light);
   text-shadow: 0 0 3px rgba(232, 213, 163, 0.7);
+  text-align: left;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Portfolio Container (Hält die Gruppen) ─────────────────────────── */
+.landscape-collage {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1000px) {
+  .landscape-collage {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .section-1, .section-2 {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ── Die Gruppen (section-1 & section-2) als Grid ─────────────────────────── */
+.section-1,
+.section-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-auto-rows: 140px;
+  gap: 10px;
+  width: 100%;
+}
+
+/* ── Image Styles ─────────────────────────── */
+.section-1 img,
+.section-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  background-color: var(--forest-mid);
+  cursor: pointer;
+}
+
+.section-1 img:hover,
+.section-2 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+img.wide {
+  grid-column: span 2;
+}
+
+/* Für große Bilder */
+.wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+/* ── Mobile Anpassung ─────────────────────────── */
+@media (max-width: 600px) {
+  .section-1,
+  .section-2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+    gap: 8px;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; text-align: center; }
+  
+  .landscape-collage {
+    gap: 30px;
+  }
 }
