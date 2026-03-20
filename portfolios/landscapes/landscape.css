@@ -162,6 +162,16 @@ img.wide {
   grid-row: span 1;
 }
 
+.wideAndHeight {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.height {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
 /* ── Mobile Anpassung ─────────────────────────── */
 @media (max-width: 600px) {
   .section-1,
