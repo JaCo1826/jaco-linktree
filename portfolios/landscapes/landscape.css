@@ -77,6 +77,74 @@ body::after {
   z-index: 0;
 }
 
+/* ── Floating leaves ──────────────────────────── */
+.leaf {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: drift linear infinite;
+}
+.leaf svg {
+  fill: var(--forest-green);
+}
+
+.leaf:nth-child(1) {
+  left: 8%;
+  animation-duration: 18s;
+  animation-delay: 0s;
+  width: 14px;
+}
+.leaf:nth-child(2) {
+  left: 22%;
+  animation-duration: 24s;
+  animation-delay: 3s;
+  width: 10px;
+}
+.leaf:nth-child(3) {
+  left: 38%;
+  animation-duration: 20s;
+  animation-delay: 7s;
+  width: 18px;
+}
+.leaf:nth-child(4) {
+  left: 55%;
+  animation-duration: 22s;
+  animation-delay: 1.5s;
+  width: 12px;
+}
+.leaf:nth-child(5) {
+  left: 70%;
+  animation-duration: 16s;
+  animation-delay: 5s;
+  width: 16px;
+}
+.leaf:nth-child(6) {
+  left: 85%;
+  animation-duration: 26s;
+  animation-delay: 9s;
+  width: 11px;
+}
+
+@keyframes drift {
+  0% {
+    top: -5%;
+    opacity: 0;
+    transform: translateX(0px) rotate(0deg);
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+    transform: translateX(60px) rotate(360deg);
+  }
+}
+
 /* ── Heading Styles ─────────────────────────── */
 h1 {
   font-size: 2.5rem;
