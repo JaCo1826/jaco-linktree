@@ -502,6 +502,13 @@
       letter-spacing: 0.02em;
     }
 
+    .impressum.loc {
+      font-size: 0.72rem;
+      color: rgba(122, 158, 126, 0.5);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
     .impressum-title {
       font-size: 0.72rem;
       color: rgba(122, 158, 126, 0.6);
