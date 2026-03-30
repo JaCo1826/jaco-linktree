@@ -2,19 +2,23 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  // SSG: statisches HTML zur Build-Zeit generieren
+
   nitro: {
     prerender: {
       crawlLinks: true
     }
   },
 
-  // Performance
   experimental: {
     payloadExtraction: false
   },
 
-/*  vite: {
+  css: [
+    '~/assets/styles/_reset.scss',
+    '~/assets/styles/main.scss'
+  ],
+
+  vite: {
     css: {
       preprocessorOptions: {
         scss: {
@@ -22,5 +26,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  }*/
+  }
 })
