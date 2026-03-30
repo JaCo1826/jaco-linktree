@@ -3,7 +3,7 @@
   position: relative;
   margin-bottom: 28px;
   opacity: 0;
-  animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
 }
 
 .avatar-ring {
@@ -23,8 +23,15 @@
 }
 
 @keyframes pulse-ring {
-  0%, 100% { opacity: 0.4; transform: scale(1);    }
-  50%       { opacity: 0.8; transform: scale(1.03); }
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
 }
 
 .avatar {
@@ -35,6 +42,6 @@
   display: block;
   border: 2px solid rgba(201, 169, 110, 0.5);
   box-shadow:
-          0 0 0 6px rgba(47, 79, 58, 0.4),
-          0 20px 60px rgba(0,0,0,0.5);
+    0 0 0 6px rgba(47, 79, 58, 0.4),
+    0 20px 60px rgba(0, 0, 0, 0.5);
 }

@@ -5,26 +5,23 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      crawlLinks: true
-    }
+      crawlLinks: true,
+    },
   },
 
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: false,
   },
 
-  css: [
-    '~/assets/styles/_reset.scss',
-    '~/assets/styles/main.scss'
-  ],
+  css: ['~/assets/styles/_reset.scss', '~/assets/styles/main.scss'],
 
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/assets/styles/_variables.scss" as *;`
-        }
-      }
-    }
-  }
-})
+          additionalData: `@use "@/assets/styles/_variables.scss" as *;`,
+        },
+      },
+    },
+  },
+});
