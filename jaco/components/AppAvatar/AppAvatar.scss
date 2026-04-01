@@ -1,6 +1,8 @@
 /* ── Profile image ────────────────────────────── */
 .avatar-wrap {
   position: relative;
+  width: fit-content;
+  align-self: center;
   margin-bottom: 28px;
   opacity: 0;
   animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;

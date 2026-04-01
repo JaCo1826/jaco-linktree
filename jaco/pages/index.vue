@@ -1,5 +1,6 @@
 <template>
   <main class="home-content">
+    <FloatingLeaves />
     <AppHero />
     <SocialLinks />
     <AppFooter />
@@ -7,8 +8,7 @@
 </template>
 
 <script setup lang="ts">
-  // Hier müssen Sie KEINE Komponenten importieren!
-  // Nuxt macht das automatisch für alles im 'components/' Ordner.
+  // Nuxt Auto-Import
 </script>
 
 <style lang="scss" scoped>

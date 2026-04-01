@@ -1,0 +1,111 @@
+@use 'variables' as *;
+@use 'reset';
+
+:root {
+  --forest-deep: #0f1f14;
+  --forest-dark: #1a3322;
+  --forest-mid: #2f4f3a;
+  --forest-green: #4c7153;
+  --moss: #7a9e7e;
+  --sage: #a8c5a0;
+  --cream: #f0ede6;
+  --warm-white: #faf9f6;
+  --gold: #c9a96e;
+  --gold-light: #e8d5a3;
+}
+
+// ── Base ────────────────────────────────────────────
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--forest-deep);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+// ── Grain overlay ────────────────────────────────────
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+// ── Ambient radial glow ──────────────────────────────
+body::after {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 700px;
+  max-height: 700px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(76, 113, 83, 0.18) 0%,
+    rgba(47, 79, 58, 0.08) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+// ── Global Animations ────────────────────────────────
+// fadeUp wird von allen Komponenten über animation: fadeUp genutzt
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0% {
+    top: -5%;
+    opacity: 0;
+    transform: translateX(0px) rotate(0deg);
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+    transform: translateX(60px) rotate(360deg);
+  }
+}
