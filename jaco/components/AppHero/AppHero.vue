@@ -14,15 +14,11 @@
     </div>
 
     <!-- Portfolio-->
-    <a
-      href="portfolios/landscapes/landscape.html"
-      target="_blank"
-      rel="noopener"
-      class="portfolio-btn"
-    >
+    <!-- Nachher -->
+    <NuxtLink to="/projects" class="portfolio-btn">
       <span class="portfolio-text">Portfolio</span>
       <span class="portfolio-arrow">→</span>
-    </a>
+    </NuxtLink>
 
     <!-- Divider -->
     <div class="divider">
