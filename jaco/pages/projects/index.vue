@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import LandscapeSection from "~/pages/projects/LandscapeSection/LandscapeSection.vue";
+</script>
+
 <template>
   <div class="page">
-    <p>Projekte – kommt noch</p>
+    <LandscapeSection />
   </div>
 </template>
