@@ -19,7 +19,7 @@
       <div class="footer-links">
         <a href="mailto:jaco1766@proton.me" class="footer-link">Kontakt</a>
         <span class="footer-link-separator">·</span>
-        <a href="impressum.html" class="footer-link">Impressum</a>
+        <NuxtLink to="/impressum" class="footer-link">Impressum</NuxtLink>
       </div>
 
       <!-- E-Recht24 Attribution -->
