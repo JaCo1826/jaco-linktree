@@ -1,14 +1,18 @@
-// jaco/nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   ssr: true,
 
   app: {
-    baseURL: '/jaco/',
+    baseURL: '/jaco-linktree/',
+
+    head: {
+      base: { href: '/jaco-linktree/' }
+    }
   },
 
   nitro: {
+    baseURL: 'jaco-linktree'
     prerender: {
       crawlLinks: true,
       routes: [
