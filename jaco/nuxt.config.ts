@@ -1,7 +1,8 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// jaco/nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  ssr: true,
 
   app: {
     baseURL: '/jaco/',
@@ -10,7 +11,13 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: [
+        '/',
+        '/impressum',
+        '/projects',
+        '/projects/landscape-section'
+      ],
+      failOnError: false,
     },
   },
 
