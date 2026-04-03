@@ -1,6 +1,6 @@
 <template>
   <header class="app-hero">
-    <AppAvatar src="/profile_1mb-jaco.webp" alt="Profilbild von JaCo" />
+    <AppAvatar :src="avatarSrc" alt="Profilbild von JaCo" />
     <h1 class="name">Ja<span>Co</span></h1>
 
     <p class="role">Videographer &nbsp;·&nbsp; Photographer &nbsp;·&nbsp; Developer</p>
@@ -25,6 +25,9 @@
   </header>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const config = useRuntimeConfig();
+  const avatarSrc = config.app.baseURL + 'profile_1mb-jaco.webp';
+</script>
 
 <style lang="scss" scoped src="./AppHero.scss" />
