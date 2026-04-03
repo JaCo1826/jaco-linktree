@@ -19,7 +19,7 @@
         <img src="/Schienen-Licht.webp" alt="Schienen Licht" />
       </div>
 
-      <br>
+      <br />
 
       <div class="section-2">
         <h2>Norway</h2>
