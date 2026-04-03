@@ -7,20 +7,15 @@ export default defineNuxtConfig({
     baseURL: '/jaco-linktree/',
 
     head: {
-      base: { href: '/jaco-linktree/' }
-    }
+      base: { href: '/jaco-linktree/' },
+    },
   },
 
   nitro: {
-    baseURL: 'jaco-linktree'
+    baseURL: 'jaco-linktree',
     prerender: {
       crawlLinks: true,
-      routes: [
-        '/',
-        '/impressum',
-        '/projects',
-        '/projects/landscape-section'
-      ],
+      routes: ['/', '/impressum', '/projects', '/projects/landscape-section'],
       failOnError: false,
     },
   },
