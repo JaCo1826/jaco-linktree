@@ -1,0 +1,139 @@
+/* ── Contact tile ── */
+.contact-section {
+  width: 100%;
+  margin-top: 44px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.45s forwards;
+}
+
+.contact-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.contact-divider::before,
+.contact-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(122, 158, 126, 0.18), transparent);
+}
+.contact-divider-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(122, 158, 126, 0.4);
+  white-space: nowrap;
+}
+
+.contact-tile {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(122, 158, 126, 0.2);
+  transition:
+    border-color 0.35s,
+    box-shadow 0.35s,
+    transform 0.2s;
+}
+.contact-tile:hover {
+  border-color: rgba(201, 169, 110, 0.38);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(201, 169, 110, 0.07);
+  transform: translateY(-2px);
+}
+
+/* Left accent band */
+.contact-accent {
+  width: 76px;
+  flex-shrink: 0;
+  background: linear-gradient(160deg, rgba(47, 79, 58, 0.92) 0%, rgba(26, 51, 34, 0.96) 100%);
+  border-right: 1px solid rgba(122, 158, 126, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-accent::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.09) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.contact-tile:hover .contact-accent::after {
+  opacity: 1;
+}
+
+.contact-accent-label {
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(168, 197, 160, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+/* Right body */
+.contact-body {
+  flex: 1;
+  padding: 18px 22px;
+  background: rgba(15, 31, 20, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background 0.35s;
+}
+.contact-tile:hover .contact-body {
+  background: rgba(26, 51, 34, 0.65);
+}
+
+.contact-body-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 5px;
+  display: block;
+}
+.contact-email {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--warm-white);
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+.contact-tile:hover .contact-email {
+  color: var(--gold-light);
+}
+
+.contact-cta {
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(122, 158, 126, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+}
+.contact-tile:hover .contact-cta {
+  color: var(--gold);
+}
+.contact-cta-arrow {
+  transition: transform 0.3s;
+}
+.contact-tile:hover .contact-cta-arrow {
+  transform: translateX(3px);
+}

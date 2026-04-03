@@ -1,0 +1,27 @@
+// _variables.scss  ← SCSS-Variablen (compile-time, nur in SCSS nutzbar)
+$forest-deep: #0f1f14;
+$forest-dark: #1a3322;
+$forest-mid: #2f4f3a;
+$forest-green: #4c7153;
+$moss: #7a9e7e;
+$sage: #a8c5a0;
+$cream: #f0ede6;
+$warm-white: #faf9f6;
+$gold: #c9a96e;
+$gold-light: #e8d5a3;
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 40px;
+
+// Typography
+$font-serif: 'Cormorant Garamond', serif;
+$font-sans: 'DM Sans', sans-serif;

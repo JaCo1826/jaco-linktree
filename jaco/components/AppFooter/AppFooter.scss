@@ -1,0 +1,104 @@
+/* ── Footer ───────────────────────────────────── */
+.footer {
+  margin-top: 52px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 1.3s forwards;
+}
+
+.footer-loc {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(122, 158, 126, 0.5);
+}
+
+.footer-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.footer-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(201, 169, 110, 0.3);
+}
+
+/* ── Impressum Section ─────────────────────────── */
+.impressum-section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.impressum-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cream);
+  margin-bottom: 2px;
+  letter-spacing: 0.02em;
+}
+
+.impressum.loc {
+  font-size: 0.72rem;
+  color: rgba(122, 158, 126, 0.5);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.impressum-title {
+  font-size: 0.72rem;
+  color: rgba(122, 158, 126, 0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ── Footer Links ──────────────────────────────– */
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  font-size: 0.72rem;
+  color: var(--sage);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--gold);
+}
+
+.footer-link-separator {
+  color: rgba(122, 158, 126, 0.3);
+  font-size: 0.72rem;
+}
+
+/* ── Footer Credit ─────────────────────────────– */
+.footer-credit {
+  font-size: 0.65rem;
+  color: rgba(122, 158, 126, 0.4);
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
+.footer-credit-link {
+  color: rgba(168, 197, 160, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-credit-link:hover {
+  color: var(--sage);
+}
