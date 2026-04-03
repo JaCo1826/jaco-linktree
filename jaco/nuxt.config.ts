@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: '/jaco-linktree/',
+    baseURL: '/jaco/',
   },
 
   nitro: {
