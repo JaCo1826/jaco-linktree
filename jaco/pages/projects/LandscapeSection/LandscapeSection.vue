@@ -4,6 +4,8 @@
 
     <h1>Landscapes Portfolio</h1>
 
+    <AppDivider />
+
     <div class="landscape-collage">
       <div class="section-1">
         <h2>Germany</h2>
@@ -16,6 +18,8 @@
         <img src="/Pilze-2.webp" alt="Pilze" class="wide" />
         <img src="/Schienen-Licht.webp" alt="Schienen Licht" />
       </div>
+
+      <br>
 
       <div class="section-2">
         <h2>Norway</h2>

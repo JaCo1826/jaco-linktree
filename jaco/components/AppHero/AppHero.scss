@@ -59,6 +59,12 @@
   background: rgba(47, 79, 58, 0.15);
 }
 
+.tag-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Portfolio ─────────────────────────────────────── */
 .portfolio-btn {
   display: inline-flex;
   align-items: center;

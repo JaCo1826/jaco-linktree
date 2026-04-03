@@ -20,6 +20,16 @@ h2 {
   z-index: 1;
 }
 
+/* ── landscape-page Base ─────────────────────────── */
+.landscape-page {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: clip;
+}
+
 /* ── Portfolio Container (Hält die Gruppen) ─────────────────────────── */
 .landscape-collage {
   display: flex;
@@ -99,22 +109,32 @@ img.height {
 
 /* ── Mobile Anpassung ─────────────────────────── */
 @media (max-width: 600px) {
+
+  .landscape-page {
+    padding: 1.5rem;
+  }
+
+  .landscape-collage {
+    gap: 30px;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   .section-1,
   .section-2 {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: clamp(130px, 40vw, 180px);
     gap: 8px;
+    width: 100%;
   }
 
   h1 {
     font-size: 2rem;
+    text-align: center;
   }
   h2 {
     font-size: 1.5rem;
     text-align: center;
-  }
-
-  .landscape-collage {
-    gap: 30px;
   }
 }
