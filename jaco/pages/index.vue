@@ -3,6 +3,8 @@
     <FloatingLeaves />
     <AppHero />
     <SocialLinks />
+    <AppDivider />
+    <ContactSection />
     <AppFooter />
   </main>
 </template>
