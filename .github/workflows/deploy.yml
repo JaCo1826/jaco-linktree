@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -29,9 +31,17 @@ jobs:
           pnpm install
           pnpm generate
 
+      - name: Check Build Output
+        run: |
+          echo "Checking directory: ./jaco/.output/public"
+          ls -la ./jaco/.output/public
+          # Wenn hier ein Fehler kommt, ist der Pfad in publish_dir falsch!
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./jaco/.output/public
           publish_branch: gh-pages
+          force_orphan: true
+          commit_message: 'Deploy to GitHub Pages'
