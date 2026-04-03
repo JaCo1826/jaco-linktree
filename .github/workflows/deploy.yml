@@ -35,7 +35,6 @@ jobs:
         run: |
           echo "Checking directory: ./jaco/.output/public"
           ls -la ./jaco/.output/public
-          # Wenn hier ein Fehler kommt, ist der Pfad in publish_dir falsch!
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
