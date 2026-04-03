@@ -7,7 +7,9 @@
 
     <!-- Tags -->
     <div class="tags">
-      <NuxtLink to="/projects/LandscapeSection" class="tag-link"><span class="tag">🌲 Landscapes</span></NuxtLink>
+      <NuxtLink to="/projects/LandscapeSection" class="tag-link"
+        ><span class="tag">🌲 Landscapes</span></NuxtLink
+      >
       <span class="tag">🐾 Wildlife</span>
       <span class="tag">🎶 Events</span>
       <span class="tag">💻 Code</span>
@@ -23,7 +25,6 @@
   </header>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped src="./AppHero.scss" />

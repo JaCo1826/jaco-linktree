@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LandscapeSection from '~/pages/projects/LandscapeSection/LandscapeSection.vue';
+  import LandscapeSection from '~/pages/projects/LandscapeSection/LandscapeSection.vue';
 </script>
 
 <template>
