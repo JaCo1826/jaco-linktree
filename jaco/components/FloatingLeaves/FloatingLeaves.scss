@@ -1,0 +1,11 @@
+.leaf {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: drift linear infinite;
+
+  svg {
+    fill: var(--forest-green);
+  }
+}
