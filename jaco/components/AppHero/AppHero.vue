@@ -14,16 +14,12 @@
     </div>
 
     <!-- Portfolio-->
-    <!-- Nachher -->
     <NuxtLink to="/projects" class="portfolio-btn">
       <span class="portfolio-text">Portfolio</span>
       <span class="portfolio-arrow">→</span>
     </NuxtLink>
 
-    <!-- Divider -->
-    <div class="divider">
-      <span class="divider-icon">✦</span>
-    </div>
+    <AppDivider />
   </header>
 </template>
 

@@ -1,8 +1,9 @@
 <template>
   <h1>Impressum</h1>
 
-  <p>Colin Noel Held<br/>
-    Soltau, Deutschland<br/>
+  <p>
+    Colin Noel Held<br />
+    Soltau, Deutschland<br />
     Photographer
   </p>
 
