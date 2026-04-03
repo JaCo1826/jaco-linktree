@@ -1,0 +1,110 @@
+/* ── Container ───────────────────────────── */
+.app-hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // ← zentriert Avatar + alle Kindelemente
+}
+
+/* ── Name & tagline ───────────────────────────── */
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--warm-white);
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+}
+
+.name span {
+  color: var(--gold);
+}
+
+.role {
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--moss);
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+/* ── Tags ─────────────────────────────────────── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+}
+
+.tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  border: 1px solid rgba(122, 158, 126, 0.3);
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(47, 79, 58, 0.15);
+}
+
+.tag-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Portfolio ─────────────────────────────────────── */
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  background: rgba(47, 79, 58, 0.25);
+  border: 1px solid rgba(122, 158, 126, 0.25);
+  color: var(--cream);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.portfolio-btn:hover {
+  background: rgba(47, 79, 58, 0.45);
+  border-color: rgba(201, 169, 110, 0.45);
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(201, 169, 110, 0.1);
+}
+
+.portfolio-btn:active {
+  transform: translateY(0px);
+}
+.portfolio-arrow {
+  font-size: 16px;
+  color: rgba(122, 158, 126, 0.4);
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+.portfolio-btn:hover .portfolio-arrow {
+  color: var(--gold-light);
+  transform: translateX(3px);
+}

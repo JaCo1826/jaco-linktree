@@ -1,0 +1,27 @@
+/* ── Divider ──────────────────────────────────── */
+.divider {
+  width: 100%;
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(122, 158, 126, 0.25), transparent);
+}
+
+.divider-icon {
+  font-size: 14px;
+  margin: 0 14px;
+  color: var(--moss);
+  opacity: 0.7;
+}
