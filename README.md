@@ -1,76 +1,75 @@
-# JaCo's Links + Portfolio
-> Name = WIP
->
+# Nuxt Minimal Starter
 
-```plain
-.
-├── jaco
-│   ├── assets
-│   │   └── styles
-│   │       ├── main.scss
-│   │       ├── _reset.scss
-│   │       └── _variables.scss
-│   ├── components
-│   │   ├── AppAvatar
-│   │   │   ├── AppAvatar.scss
-│   │   │   └── AppAvatar.vue
-│   │   ├── AppDivider
-│   │   │   ├── AppDivider.scss
-│   │   │   └── AppDivider.vue
-│   │   ├── AppFooter
-│   │   │   ├── AppFooter.scss
-│   │   │   └── AppFooter.vue
-│   │   ├── AppHero
-│   │   │   ├── AppHero.scss
-│   │   │   └── AppHero.vue
-│   │   ├── ContactSection
-│   │   │   ├── ContactSection.scss
-│   │   │   └── ContactSection.vue
-│   │   ├── FloatingLeaves
-│   │   │   ├── FloatingLeaves.scss
-│   │   │   └── FloatingLeaves.vue
-│   │   ├── ImageGrid.vue
-│   │   └── SocialLinks
-│   │       ├── SocialLinks.scss
-│   │       └── SocialLinks.vue
-│   ├── layouts
-│   │   └── default.vue
-│   ├── nuxt.config.ts
-│   ├── package.json
-│   ├── pages
-│   │   ├── error.vue
-│   │   ├── impressum.vue
-│   │   ├── index.vue
-│   │   └── projects
-│   │       ├── index.vue
-│   │       └── LandscapeSection
-│   │           ├── index.vue
-│   │           ├── LandscapeSection.scss
-│   │           └── LandscapeSection.vue
-│   ├── pnpm-lock.yaml
-│   ├── public
-│   │   ├── Bahnschienen.webp
-│   │   ├── bench-spring.webp
-│   │   ├── favicon.ico
-│   │   ├── Frostbaum.webp
-│   │   ├── Herbstblatt.webp
-│   │   ├── MoosLichtung.webp
-│   │   ├── Norwegen-Berg.webp
-│   │   ├── Norwegen-Brücke.webp
-│   │   ├── Norwegen-Farn.webp
-│   │   ├── Norwegen-Galdhoeppigen-1.webp
-│   │   ├── Norwegen-Galdhoeppigen-2.webp
-│   │   ├── Norwegen-MiniWasserfall.webp
-│   │   ├── Norwegen-See.webp
-│   │   ├── Pilze-1.webp
-│   │   ├── Pilze-2.webp
-│   │   ├── profile_1mb-jaco.webp
-│   │   ├── robots.txt
-│   │   └── Schienen-Licht.webp
-│   ├── README.md
-│   └── tsconfig.json
-└── README.md
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-17 directories, 50 files
+## Setup
+
+Make sure to install dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
-Der assets Folder ist ausgenommen.
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

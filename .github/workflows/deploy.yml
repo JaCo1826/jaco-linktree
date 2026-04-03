@@ -26,15 +26,14 @@ jobs:
           version: 10
 
       - name: Install dependencies & Build
-        working-directory: ./jaco
         run: |
           pnpm install
           pnpm generate
 
       - name: Check Build Output
         run: |
-          echo "Checking directory: ./jaco/.output/public"
-          ls -la ./jaco/.output/public
+          echo "Checking directory: .output/public"
+          ls -la .output/public
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
