@@ -9,9 +9,7 @@
   </main>
 </template>
 
-<script setup lang="ts">
-  // Nuxt Auto-Import
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
   .home-content {

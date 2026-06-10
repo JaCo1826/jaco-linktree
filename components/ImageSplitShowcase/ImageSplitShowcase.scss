@@ -1,0 +1,126 @@
+.showcase-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0c0c0c;
+  font-family: 'Reem Kufi', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 10;
+  }
+
+  // Wrapper für das Bild, damit wir die Transformation steuern können
+  .slide-image-wrapper {
+    position: absolute;
+    background-color: #0c0c0c;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-image-wrapper img {
+      object-fit: contain; // Mobile: Ganzes Bild sichtbar
+    }
+  }
+
+  // Wenn Slide aktiv ist: Wrapper fährt auf Position 0
+  &.active .slide-image-wrapper {
+    transform: translateX(0);
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    color: white;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+    // Optional: Text kann auch noch leicht von unten einfliegen
+    opacity: 0;
+    transition: opacity 0.5s ease 0.5s; // Verzögert, damit er nach dem Bild kommt
+
+    .active & {
+      opacity: 1;
+    }
+  }
+}
+
+// Navigation (unverändert, aber hier zur Vollständigkeit)
+.slide-select {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 30;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+
+    &:hover, &.current {
+      color: white;
+    }
+
+    &.selector {
+      width: 12px;
+      height: 12px;
+      background-color: currentColor;
+      border-radius: 50%;
+      font-size: 0; // Versteckt den Inhalt falls vorhanden
+    }
+  }
+}
