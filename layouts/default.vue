@@ -1,24 +1,44 @@
 <template>
   <div class="app-container">
-    <!-- Grain & Glow sind jetzt im CSS des Bodies oder hier als fixe Divs -->
     <NuxtPage />
   </div>
 </template>
 
 <style lang="scss">
-  // Importieren Sie hier ggf. Reset oder Basis-Styles, falls nicht in nuxt.config
   @use '~/assets/styles/reset';
 
+  html,
   body {
-    margin: 1rem;
-    padding: 1rem;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* Wichtig: Verhindert, dass Body größer wird als nötig, aber erlaubt 100% */
+    min-height: 100vh;
+  }
+
+  body {
     font-family: 'DM Sans', sans-serif;
     background-color: var(--forest-deep);
     color: var(--cream);
-    min-height: 100vh;
+    /* Flexbox sorgt dafür, dass Kinder die Höhe erben können */
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
     position: relative;
-    // Fügen Sie hier Ihre ::before und ::after Pseudo-Elemente für Grain/Glow ein
-    // Oder lagern Sie das in eine separate Component <BackgroundEffects /> aus
+  }
+
+  .app-container {
+    height: 100%;
+    width: 100%;
+    /* Wichtig: Flexbox im Container, damit NuxtPage die Höhe einnimmt */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Globaler Fix für das von Nuxt generierte Page-Element, falls nötig */
+  /* Oft hilft es, das direkte Kind von .app-container zu targeten */
+  .app-container > div {
+    height: 100%;
+    flex: 1;
   }
 </style>

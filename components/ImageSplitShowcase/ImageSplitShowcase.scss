@@ -1,0 +1,305 @@
+// ImageSplitShowcase.scss
+// Benötigt Cormorant Garamond in nuxt.config.ts / app.vue:
+// <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+// ── Timing-Konstanten ────────────────────────────────────────────────────────
+$transition-wipe:    1.1s cubic-bezier(0.77, 0, 0.175, 1);
+$transition-title:   0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+// ── Container ────────────────────────────────────────────────────────────────
+.showcase-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--forest-deep);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+// ── Slides-Liste ─────────────────────────────────────────────────────────────
+.slides {
+  position: absolute;
+  inset: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// ── Einzelner Slide ──────────────────────────────────────────────────────────
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  // kein opacity-Fade mehr – der Clip-Path übernimmt die Transition
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 2;
+  }
+}
+
+// ── Bild: Clip-Path-Wipe von links + Ken-Burns-Zoom ─────────────────────────
+.slide-image-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+  // Bild startet rechts außen (100% verdeckt von rechts)
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path $transition-wipe;
+
+  .active & {
+    clip-path: inset(0 0% 0 0);
+  }
+
+  img {
+    position: absolute;
+    // leicht oversized für Ken-Burns ohne sichtbaren Rand
+    inset: -4%;
+    width: 108%;
+    height: 108%;
+    object-fit: cover;
+
+    // Ken-Burns: leicht reingezoomt, dann auf 1.0
+    transform: scale(1.08);
+    transition: transform 7s ease;
+
+    .active & {
+      transform: scale(1.0);
+    }
+  }
+}
+
+// ── Vignette (links dunkler für Lesbarkeit) ──────────────────────────────────
+.slide-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+          to right,
+          rgba(15, 31, 20, 0.78) 0%,
+          rgba(15, 31, 20, 0.25) 55%,
+          rgba(15, 31, 20, 0.05) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+// ── Text-Block ───────────────────────────────────────────────────────────────
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 80px 72px;
+  z-index: 3;
+
+  @media (max-width: 768px) {
+    padding: 0 0 90px 32px;
+  }
+}
+
+// Eyebrow: Linie + Label
+.slide-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.eyebrow-line {
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: var(--moss);
+  transition: width 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.4s;
+
+  .active & {
+    width: 36px;
+  }
+}
+
+.eyebrow-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--moss);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.5s ease 0.55s, transform 0.5s ease 0.55s;
+
+  .active & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Titel: Overflow-Clip-Aufstieg
+.slide-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 8vw, 88px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--warm-white);
+  line-height: 1.0;
+  letter-spacing: 0.01em;
+  margin: 0;
+  overflow: hidden; // clip für Aufstieg-Animation
+}
+
+.title-inner {
+  display: block;
+  transform: translateY(100%);
+  opacity: 0;
+  transition:
+          transform $transition-title 0.65s,
+          opacity 0.5s ease 0.65s;
+
+  .active & {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Goldene Unterlinie – wächst von links
+.slide-underline {
+  margin-top: 18px;
+  width: 0;
+  height: 1px;
+  background-color: var(--gold);
+  transition: width 1.0s cubic-bezier(0.77, 0, 0.175, 1) 1.1s;
+
+  .active & {
+    width: 110px;
+  }
+}
+
+// Subtitle
+.slide-sub {
+  margin-top: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(250, 249, 246, 0.5);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease 1.35s, transform 0.6s ease 1.35s;
+
+  .active & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── Vertikale Progress-Leiste (links) ────────────────────────────────────────
+.progress-bar {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: 768px) {
+    left: 12px;
+  }
+}
+
+.prog-item {
+  width: 2px;
+  height: 40px;
+  background-color: rgba(250, 249, 246, 0.15);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(250, 249, 246, 0.3);
+  }
+
+  &.cur {
+    background-color: rgba(250, 249, 246, 0.2);
+  }
+}
+
+.prog-fill {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--gold);
+}
+
+// ── Slide-Zähler ─────────────────────────────────────────────────────────────
+.slide-counter {
+  position: absolute;
+  bottom: 40px;
+  left: 72px;
+  z-index: 10;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(250, 249, 246, 0.3);
+
+  @media (max-width: 768px) {
+    left: 32px;
+    bottom: 56px;
+  }
+}
+
+// ── Navigations-Pfeile ───────────────────────────────────────────────────────
+.slide-nav {
+  position: absolute;
+  bottom: 28px;
+  right: 40px;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+.nav-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(250, 249, 246, 0.25);
+  background-color: rgba(15, 31, 20, 0.4);
+  color: rgba(250, 249, 246, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+
+  &:hover {
+    border-color: rgba(250, 249, 246, 0.6);
+    color: var(--warm-white);
+    background-color: rgba(15, 31, 20, 0.7);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
