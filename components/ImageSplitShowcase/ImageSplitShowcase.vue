@@ -8,31 +8,51 @@
         :class="{ active: currentIndex === index }"
         @click="handleSlideClick(slide.target)"
       >
-        <!-- Nur noch ein einzelnes Bild -->
         <div class="slide-image-wrapper">
           <img :src="slide.imgMain" :alt="slide.title" loading="lazy" width="1920" height="1080" />
         </div>
 
-        <h1 class="title">
-          <span class="title-text">{{ slide.title }}</span>
-        </h1>
+        <!-- Vignette -->
+        <div class="slide-vignette" aria-hidden="true"></div>
+
+        <!-- Textinhalt -->
+        <div class="slide-content">
+          <div class="slide-eyebrow" aria-hidden="true">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text">Photography Series</span>
+          </div>
+          <h1 class="slide-title">
+            <span class="title-inner">{{ slide.title }}</span>
+          </h1>
+          <div class="slide-underline" aria-hidden="true"></div>
+          <p class="slide-sub">{{ slide.subtitle }}</p>
+        </div>
       </li>
     </ul>
 
-    <!-- Navigation bleibt gleich -->
-    <ul class="slide-select">
-      <li class="btn prev" @click="handlePrev" role="button" aria-label="Previous Slide">&lt;</li>
+    <!-- Vertikale Progress-Leiste links -->
+    <ul class="progress-bar" aria-hidden="true">
       <li
         v-for="(slide, index) in slides"
         :key="index"
-        class="selector"
-        :class="{ current: currentIndex === index }"
+        class="prog-item"
+        :class="{ cur: currentIndex === index }"
         @click="handleManualSelect(index)"
-        role="button"
-        :aria-label="'Go to slide ' + (index + 1)"
-      ></li>
-      <li class="btn next" @click="handleNext" role="button" aria-label="Next Slide">&gt;</li>
+      >
+        <span class="prog-fill" :style="progressStyle(index)"></span>
+      </li>
     </ul>
+
+    <!-- Slide-Zähler -->
+    <div class="slide-counter" aria-live="polite">
+      {{ padded(currentIndex + 1) }} / {{ padded(slides.length) }}
+    </div>
+
+    <!-- Navigations-Pfeile rechts unten -->
+    <div class="slide-nav">
+      <button class="nav-btn" @click="handlePrev" aria-label="Vorheriger Slide">&#8592;</button>
+      <button class="nav-btn" @click="handleNext" aria-label="Nächster Slide">&#8594;</button>
+    </div>
   </div>
 </template>
 
@@ -44,7 +64,8 @@
 
   interface SlideData {
     title: string;
-    imgMain: string; // Neu: Nur ein Hauptbild
+    subtitle: string;
+    imgMain: string;
     target: string;
   }
 
@@ -53,38 +74,71 @@
   const slidesData: SlideData[] = [
     {
       title: 'Landscapes',
-      // Wählen Sie das beste Bild für die Kategorie aus
-      imgMain: `${BASE_PATH}/Norwegen-Berg.webp`,
+      subtitle: 'Mountains, fjords & open horizon',
+      imgMain: `${BASE_PATH}/NorwayMountainscapes.webp`,
       target: '/projects/landscape-section',
     },
     {
       title: 'Wildlife',
-      imgMain: `${BASE_PATH}/Pilze-1.webp`,
+      subtitle: 'Moments of stillness & encounter',
+      imgMain: `${BASE_PATH}/Firefly-tbc.png`,
       target: '/projects/wildlife-section',
     },
     {
       title: 'Streetphotography',
-      imgMain: `${BASE_PATH}/Norwegen-Brücke.webp`,
+      subtitle: 'Urban rhythm & architectural symmetry',
+      imgMain: `${BASE_PATH}/Firefly-tbc.png`,
       target: '/projects/streetphotography-section',
     },
     {
       title: 'More',
-      imgMain: `${BASE_PATH}/Frostbaum.webp`,
+      subtitle: 'Explore something different',
+      imgMain: `${BASE_PATH}/Firefly-tbc.png`,
       target: '/projects',
     },
   ];
 
   const slides = ref<SlideData[]>(slidesData);
   const currentIndex = ref(0);
+  const progressPercent = ref(0); // 0–100
+
+  const SLIDE_DURATION = 6000;
+  const TICK = 50; // ms pro Tick
 
   let autoPlayInterval: ReturnType<typeof setInterval> | null = null;
-  const SLIDE_DURATION = 6000;
+  let progressInterval: ReturnType<typeof setInterval> | null = null;
 
-  const cycle = (forcedIndex?: number) => {
-    const total = slides.value.length;
-    if (total === 0) return;
-    currentIndex.value =
-      typeof forcedIndex === 'number' ? forcedIndex : (currentIndex.value + 1) % total;
+  // --- Hilfsfunktionen ---
+
+  const padded = (n: number) => String(n).padStart(2, '0');
+
+  const progressStyle = (index: number) => {
+    if (index !== currentIndex.value) return { height: '0%', transition: 'none' };
+    return {
+      height: `${progressPercent.value}%`,
+      transition: `height ${TICK}ms linear`,
+    };
+  };
+
+  // --- Steuerung ---
+
+  const stopProgress = () => {
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      progressInterval = null;
+    }
+    progressPercent.value = 0;
+  };
+
+  const startProgress = () => {
+    stopProgress();
+    const steps = SLIDE_DURATION / TICK;
+    const increment = 100 / steps;
+    progressPercent.value = 0;
+
+    progressInterval = setInterval(() => {
+      progressPercent.value = Math.min(progressPercent.value + increment, 100);
+    }, TICK);
   };
 
   const stopAutoPlay = () => {
@@ -92,6 +146,14 @@
       clearInterval(autoPlayInterval);
       autoPlayInterval = null;
     }
+  };
+
+  const cycle = (forcedIndex?: number) => {
+    const total = slides.value.length;
+    if (total === 0) return;
+    currentIndex.value =
+      typeof forcedIndex === 'number' ? forcedIndex : (currentIndex.value + 1) % total;
+    startProgress();
   };
 
   const startAutoPlay = () => {
@@ -102,18 +164,21 @@
   const handleManualSelect = (index: number) => {
     if (index === currentIndex.value) return;
     stopAutoPlay();
+    stopProgress();
     cycle(index);
     startAutoPlay();
   };
 
   const handleNext = () => {
     stopAutoPlay();
+    stopProgress();
     cycle();
     startAutoPlay();
   };
 
   const handlePrev = () => {
     stopAutoPlay();
+    stopProgress();
     cycle((currentIndex.value - 1 + slides.value.length) % slides.value.length);
     startAutoPlay();
   };
@@ -122,8 +187,15 @@
     if (url) router.push(url).catch(console.warn);
   };
 
-  onMounted(startAutoPlay);
-  onUnmounted(stopAutoPlay);
+  onMounted(() => {
+    startProgress();
+    startAutoPlay();
+  });
+
+  onUnmounted(() => {
+    stopAutoPlay();
+    stopProgress();
+  });
 </script>
 
 <style lang="scss" scoped src="./ImageSplitShowcase.scss"></style>
