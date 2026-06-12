@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import WildlifeSection from '~/pages/projects/WildlifeSection/WildlifeSection.vue';
+  import WildlifeSection from './wildlife-section.vue';
 </script>
 
 <template>

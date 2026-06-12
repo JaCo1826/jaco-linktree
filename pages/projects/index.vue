@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import ImageSplitShowcase from '~/components/ImageSplitShowcase/ImageSplitShowcase.vue';
+</script>
 
 <template>
   <div class="page">

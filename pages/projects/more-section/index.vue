@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import MoreSection from '~/pages/projects/MoreSection/MoreSection.vue';
+  import MoreSection from './more-section.vue';
 </script>
 
 <template>

@@ -7,7 +7,7 @@
 
     <!-- Tags -->
     <div class="tags">
-      <NuxtLink to="/projects/LandscapeSection" class="tag-link"
+      <NuxtLink to="/projects/landscape-section" class="tag-link"
         ><span class="tag">🌲 Landscapes</span></NuxtLink
       >
       <span class="tag">🐾 Wildlife</span>
