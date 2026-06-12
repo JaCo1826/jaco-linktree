@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import StreetphotographySection from '~/pages/projects/StreetphotographySection/StreetphotographySection.vue';
+  import StreetphotographySection from './streetphotography-section.vue';
 </script>
 
 <template>

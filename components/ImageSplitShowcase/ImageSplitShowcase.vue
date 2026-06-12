@@ -94,7 +94,7 @@
       title: 'More',
       subtitle: 'Explore something different',
       imgMain: `${BASE_PATH}/Firefly-tbc.png`,
-      target: '/projects',
+      target: '/projects/more-section',
     },
   ];
 

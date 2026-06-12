@@ -41,4 +41,4 @@
   });
 </script>
 
-<style lang="scss" scoped src="./LandscapeSection.scss" />
+<style lang="scss" scoped src="./landscape-section.scss" />
