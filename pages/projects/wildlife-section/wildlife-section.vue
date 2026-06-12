@@ -3,3 +3,5 @@
 <template>
   <h1>NOT READY</h1>
 </template>
+
+<style lang="scss" scoped src="./wildlife-section.scss"></style>
