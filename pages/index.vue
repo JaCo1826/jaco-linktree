@@ -1,10 +1,12 @@
 <template>
   <main class="home-content">
     <FloatingLeaves />
-    <AppHero />
-    <SocialLinks />
-    <AppDivider />
-    <ContactSection />
+    <div class="home-body">
+      <AppHero />
+      <SocialLinks />
+      <AppDivider />
+      <ContactSection />
+    </div>
     <AppFooter />
   </main>
 </template>
@@ -21,5 +23,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100dvh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .home-body {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
   }
 </style>
