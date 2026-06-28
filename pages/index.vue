@@ -7,6 +7,13 @@
       <AppDivider />
       <ContactSection />
     </div>
+    <div class="content">
+      <ImageSplitShowcase />
+    </div>
+    <div>
+      <MoreSection />
+    </div>
+    <BioSection />
     <AppFooter />
   </main>
 </template>

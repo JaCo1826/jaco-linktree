@@ -60,8 +60,6 @@
   import { ref, onMounted, onUnmounted } from 'vue';
   import { useRouter } from 'vue-router';
 
-  const BASE_PATH = '/jaco-linktree';
-
   interface SlideData {
     title: string;
     subtitle: string;
@@ -70,31 +68,27 @@
   }
 
   const router = useRouter();
+  const config = useRuntimeConfig();
+  const basePath = config.app.baseURL;
 
   const slidesData: SlideData[] = [
     {
       title: 'Landscapes',
       subtitle: 'Mountains, fjords & open horizon',
-      imgMain: `${BASE_PATH}/NorwayMountainscapes.webp`,
+      imgMain: `${basePath}NorwayMountainscapes.webp`,
       target: '/projects/landscape-section',
     },
     {
       title: 'Wildlife',
       subtitle: 'Moments of stillness & encounter',
-      imgMain: `${BASE_PATH}/Firefly-tbc.png`,
+      imgMain: `${basePath}Firefly-tbc.png`,
       target: '/projects/wildlife-section',
     },
     {
       title: 'Streetphotography',
       subtitle: 'Urban rhythm & architectural symmetry',
-      imgMain: `${BASE_PATH}/Firefly-tbc.png`,
+      imgMain: `${basePath}Firefly-tbc.png`,
       target: '/projects/streetphotography-section',
-    },
-    {
-      title: 'More',
-      subtitle: 'Explore something different',
-      imgMain: `${BASE_PATH}/Firefly-tbc.png`,
-      target: '/projects/more-section',
     },
   ];
 
@@ -107,6 +101,9 @@
 
   let autoPlayInterval: ReturnType<typeof setInterval> | null = null;
   let progressInterval: ReturnType<typeof setInterval> | null = null;
+  // Wird einmalig in onMounted gesetzt; pausiert Auto-Cycling & Progress-Fill,
+  // lässt manuelle Navigation (Klick/Pfeile) aber unangetastet.
+  let reduceMotion = false;
 
   // --- Hilfsfunktionen ---
 
@@ -131,6 +128,7 @@
   };
 
   const startProgress = () => {
+    if (reduceMotion) return;
     stopProgress();
     const steps = SLIDE_DURATION / TICK;
     const increment = 100 / steps;
@@ -157,37 +155,36 @@
   };
 
   const startAutoPlay = () => {
+    if (reduceMotion) return;
     stopAutoPlay();
     autoPlayInterval = setInterval(cycle, SLIDE_DURATION);
   };
 
+  // Gebündelte manuelle Navigation — ersetzt den dreifach wiederholten
+  // stopAutoPlay/stopProgress/cycle/startAutoPlay-Block.
+  const goTo = (forcedIndex?: number) => {
+    stopAutoPlay();
+    stopProgress();
+    cycle(forcedIndex);
+    startAutoPlay();
+  };
+
   const handleManualSelect = (index: number) => {
     if (index === currentIndex.value) return;
-    stopAutoPlay();
-    stopProgress();
-    cycle(index);
-    startAutoPlay();
+    goTo(index);
   };
 
-  const handleNext = () => {
-    stopAutoPlay();
-    stopProgress();
-    cycle();
-    startAutoPlay();
-  };
+  const handleNext = () => goTo();
 
-  const handlePrev = () => {
-    stopAutoPlay();
-    stopProgress();
-    cycle((currentIndex.value - 1 + slides.value.length) % slides.value.length);
-    startAutoPlay();
-  };
+  const handlePrev = () =>
+    goTo((currentIndex.value - 1 + slides.value.length) % slides.value.length);
 
   const handleSlideClick = (url: string) => {
     if (url) router.push(url).catch(console.warn);
   };
 
   onMounted(() => {
+    reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     startProgress();
     startAutoPlay();
   });

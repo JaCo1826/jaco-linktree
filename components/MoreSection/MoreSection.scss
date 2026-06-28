@@ -1,0 +1,33 @@
+.more-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 50px;
+}
+.more-card {
+  display: block;
+  border: 1px dashed rgba(var(--gold-rgb), 0.3);
+  border-radius: 4px;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--moss);
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.more-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.more-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.more-card span {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}

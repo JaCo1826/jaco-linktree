@@ -9,8 +9,8 @@ $transition-title: 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 // ── Container ────────────────────────────────────────────────────────────────
 .showcase-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100vh;
+  height: 70vh;
   overflow: hidden;
   background-color: var(--forest-deep);
   box-sizing: border-box;

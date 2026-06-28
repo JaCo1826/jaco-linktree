@@ -12,6 +12,10 @@
   --warm-white: #faf9f6;
   --gold: #c9a96e;
   --gold-light: #e8d5a3;
+
+  --ink: #070d09;
+  --gold-rgb: 201, 169, 110;
+  --forest-green-rgb: 76, 113, 83;
 }
 
 // ── Base ────────────────────────────────────────────
@@ -81,17 +85,6 @@ body::after {
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes drift {
   0% {
     top: -5%;
@@ -112,7 +105,8 @@ body::after {
 }
 
 @keyframes pulse-ring {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
     transform: scale(1);
   }
@@ -123,5 +117,100 @@ body::after {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate(-1.5%, -1%);
+  }
+}
+@keyframes lightDrift {
+  0% {
+    transform: translate(-10%, -5%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(8%, 6%) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-10%, -5%) scale(1);
+    opacity: 0.5;
+  }
+}
+@keyframes bounceCue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .wildlife-grid {
+    grid-template-columns: 1fr;
+  }
+  .wildlife-card:first-child {
+    grid-row: auto;
+    height: 50vh;
+  }
+  .street-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .more-grid {
+    grid-template-columns: 1fr;
+  }
+  .chapter {
+    padding: 90px 7vw;
+  }
+  .street-section {
+    margin: 0 -7vw;
+    padding: 90px 7vw;
+  }
+  .bio-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .travel-title-block {
+    left: 18px;
+    bottom: 16px;
+  }
 }
