@@ -39,6 +39,10 @@ body {
   overflow-x: clip;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // ── Grain overlay ────────────────────────────────────
 body::before {
   content: '';

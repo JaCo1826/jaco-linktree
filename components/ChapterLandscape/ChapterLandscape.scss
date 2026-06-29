@@ -1,0 +1,22 @@
+.landscape-grid {
+  position: relative;
+  margin-top: 50px;
+  border-radius: 4px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.landscape-grid img,
+.landscape-grid video {
+  width: 100%;
+  height: 64vh;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.02);
+}
+.landscape-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(var(--gold-rgb), 0.22), transparent 55%);
+  mix-blend-mode: screen;
+  animation: lightDrift 16s ease-in-out infinite;
+  z-index: 1;
+}

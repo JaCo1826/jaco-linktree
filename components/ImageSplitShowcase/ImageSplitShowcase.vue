@@ -101,8 +101,6 @@
 
   let autoPlayInterval: ReturnType<typeof setInterval> | null = null;
   let progressInterval: ReturnType<typeof setInterval> | null = null;
-  // Wird einmalig in onMounted gesetzt; pausiert Auto-Cycling & Progress-Fill,
-  // lässt manuelle Navigation (Klick/Pfeile) aber unangetastet.
   let reduceMotion = false;
 
   // --- Hilfsfunktionen ---
@@ -160,8 +158,6 @@
     autoPlayInterval = setInterval(cycle, SLIDE_DURATION);
   };
 
-  // Gebündelte manuelle Navigation — ersetzt den dreifach wiederholten
-  // stopAutoPlay/stopProgress/cycle/startAutoPlay-Block.
   const goTo = (forcedIndex?: number) => {
     stopAutoPlay();
     stopProgress();

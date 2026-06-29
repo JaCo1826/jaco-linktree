@@ -17,6 +17,28 @@
   </div>
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+  //import { ref, onMounted, onUnmounted } from 'vue';
+  //import { useRouter } from 'vue-router';
+
+  //interface ProjectsData {
+  //title: string;
+  //subtitle: string;
+  //imgMain: string;
+  //target: string;
+  //}
+
+  //const router = useRouter();
+  //const config = useRuntimeConfig();
+  //const basePath = config.app.baseURL;
+
+  //const projectsData: ProjectsData[] = [
+  //{
+  //title: 'Reisen',
+  //subtitle: 'WIP',
+  //imgMain: `${basePath}Firefly-tbc.png`,
+  //target: '/projects/travel',
+  //}
+</script>
 
 <style lang="scss" scoped src="./MoreSection.scss"></style>

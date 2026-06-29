@@ -1,24 +1,38 @@
 <template>
   <main class="home-content">
     <FloatingLeaves />
-    <div class="home-body">
-      <AppHero />
-      <SocialLinks />
-      <AppDivider />
-      <ContactSection />
+
+    <div class="first-screen-wrapper">
+      <div class="home-body">
+        <AppHero />
+        <SocialLinks />
+        <AppDivider />
+        <ContactSection />
+      </div>
     </div>
-    <div class="content">
-      <ImageSplitShowcase />
-    </div>
-    <div>
-      <MoreSection />
-    </div>
+
+    <ImageSplitShowcase id="showcase" />
+
+    <ChapterLandscape id="landscape" />
+    <ChapterWildlife id="wildlife" />
+    <ChapterStreetphotography id="streetphotography" />
+    <MoreSection />
     <BioSection />
     <AppFooter />
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { onMounted } from 'vue';
+
+  onMounted(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    });
+  });
+</script>
 
 <style lang="scss" scoped>
   .home-content {
@@ -30,17 +44,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-block: 0;
+  }
+
+  .first-screen-wrapper {
+    width: 100%;
     min-height: 100dvh;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .home-body {
-    flex: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+    padding-inline: clamp(20px, 6vw, 40px);
+    padding-block: 40px;
   }
 </style>
