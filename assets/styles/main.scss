@@ -76,6 +76,73 @@ body::after {
   z-index: 0;
 }
 
+.chapter {
+  position: relative;
+  z-index: 2;
+  padding: 130px 8vw;
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+.chapter.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: var(--gold);
+}
+.chapter-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  margin-bottom: 22px;
+}
+.chapter-copy {
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--sage);
+  margin-bottom: 30px;
+}
+.chapter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  position: relative;
+}
+.chapter-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.chapter-link:hover::after {
+  transform: scaleX(1);
+}
+
 // ── Global Animations ────────────────────────────────
 // fadeUp wird von allen Komponenten über animation: fadeUp genutzt
 @keyframes fadeUp {
