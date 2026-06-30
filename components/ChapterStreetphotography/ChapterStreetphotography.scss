@@ -63,6 +63,8 @@
 .street-card .frame-svg {
   position: absolute;
   inset: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
   z-index: 3;
   pointer-events: none;
 }
@@ -70,8 +72,8 @@
   fill: none;
   stroke: var(--gold);
   stroke-width: 1.5;
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
   transition: stroke-dashoffset 0.7s ease;
 }
 .street-card:hover .frame-svg rect {
