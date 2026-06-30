@@ -4,7 +4,12 @@
   <p class="chapter-copy">
     Unscharfe Ränder, harte Kontraste. Die Straße erzählt am ehrlichsten, wenn niemand stillhält.
   </p>
-  <a class="chapter-link" href="#" style="margin-bottom: 10px">Serie ansehen →</a>
+  <NuxtLink
+    class="chapter-link"
+    to="/projects/streetphotography-section"
+    style="margin-bottom: 10px"
+    >Galerie ansehen →</NuxtLink
+  >
   <div class="street-grid" id="streetGrid"></div>
 </template>
 

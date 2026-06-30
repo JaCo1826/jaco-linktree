@@ -5,7 +5,7 @@
     Geduld im Unterholz. Jede Aufnahme ein Zufall, der lange genug erwartet wurde, um keiner mehr zu
     sein.
   </p>
-  <a class="chapter-link" href="#">Galerie ansehen →</a>
+  <NuxtLink class="chapter-link" to="/projects/wildlife-section">Galerie ansehen →</NuxtLink>
   <div class="wildlife-grid" id="wildlifeGrid"></div>
 </template>
 

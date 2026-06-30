@@ -1,7 +1,28 @@
-<template>
-  <h1>TRAVEL-TEST</h1>
-</template>
+<script setup lang="ts">
+  interface Props {
+    title: string;
+    teaser: string;
+    cover: string;
+    to: string;
+    tag?: string;
+    meta?: string;
+  }
+  defineProps<Props>();
+</script>
 
-<script lang="ts"></script>
+<template>
+  <NuxtLink class="travel-entry" :to="to">
+    <div class="travel-entry-cover">
+      <img :src="cover" :alt="title" />
+      <span v-if="tag" class="travel-entry-tag">{{ tag }}</span>
+    </div>
+    <div class="travel-entry-content">
+      <h3 class="travel-entry-title">{{ title }}</h3>
+      <p v-if="meta" class="travel-entry-meta">{{ meta }}</p>
+      <p class="travel-entry-teaser">{{ teaser }}</p>
+      <span class="travel-entry-link">Mehr lesen →</span>
+    </div>
+  </NuxtLink>
+</template>
 
 <style lang="scss" scoped src="./TravelEntry.scss"></style>

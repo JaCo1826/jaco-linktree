@@ -10,35 +10,13 @@
       <h3>Events</h3>
       <span>In Arbeit</span>
     </div>
-    <a class="more-card" href="#travel-template"
-      ><h3>Reisen</h3>
-      <span>Eigene Vorlage ↓</span></a
-    >
+    <NuxtLink class="more-card" to="/projects/travel">
+      <h3>Reisen</h3>
+      <span>Eigene Vorlage →</span>
+    </NuxtLink>
   </div>
 </template>
 
-<script lang="ts">
-  //import { ref, onMounted, onUnmounted } from 'vue';
-  //import { useRouter } from 'vue-router';
-
-  //interface ProjectsData {
-  //title: string;
-  //subtitle: string;
-  //imgMain: string;
-  //target: string;
-  //}
-
-  //const router = useRouter();
-  //const config = useRuntimeConfig();
-  //const basePath = config.app.baseURL;
-
-  //const projectsData: ProjectsData[] = [
-  //{
-  //title: 'Reisen',
-  //subtitle: 'WIP',
-  //imgMain: `${basePath}Firefly-tbc.png`,
-  //target: '/projects/travel',
-  //}
-</script>
+<script lang="ts"></script>
 
 <style lang="scss" scoped src="./MoreSection.scss"></style>

@@ -1,7 +1,16 @@
+<script setup lang="ts">
+  useSeoMeta({ title: 'JaCo – Norwegen' });
+</script>
+
 <template>
-  <h1>Norwegen - Unberührte Landschaften</h1>
-
-  <p>Ein Land das verzaubert.</p>
+  <TravelPost
+    title="Fjorde und endloses Licht"
+    tag="Norwegen"
+    meta="Reise · Juni 2025 · 12 Tage"
+    cover="/Norwegen-Berg.webp"
+  >
+    <p>Zwölf Tage entlang der Fjorde, immer mit der Kamera griffbereit...</p>
+    <PullQuote>"Das Licht hier kennt keine Eile."</PullQuote>
+    <p>Die besten Aufnahmen entstanden dort, wo der Plan...</p>
+  </TravelPost>
 </template>
-
-<script lang="ts"></script>
