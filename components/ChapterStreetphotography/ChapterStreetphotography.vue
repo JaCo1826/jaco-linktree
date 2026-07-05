@@ -32,7 +32,7 @@
   const SAMPLE_VIDEO_3 = '';
 
   const streetMedia = [
-    { type: 'image' as 'image', src: '/Firefly-tbc.png' },
+    { type: 'image' as 'image', src: 'Firefly-tbc.png' },
     {
       type: 'video' as 'video',
       src: SAMPLE_VIDEO_3,

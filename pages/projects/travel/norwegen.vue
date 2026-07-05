@@ -7,7 +7,7 @@
     title="Hohe Gebirge, Gletscher und raue Flüsse"
     tag="Norwegen"
     meta="Reise · Juli 2025 · 15 Tage"
-    cover="/NorwayMountainscapes.webp"
+    cover="NorwayMountainscapes.webp"
   >
     <p>Endlose weiten...</p>
     <PullQuote>"Das Licht hier kennt keine Eile."</PullQuote>
