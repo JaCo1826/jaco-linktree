@@ -2,21 +2,38 @@
   position: relative;
   aspect-ratio: 16 / 8;
   overflow: hidden;
-
   img,
   video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: saturate(1.05) contrast(1.05);
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
-
+  img.is-loaded,
+  video.is-loaded {
+    opacity: 1;
+  }
   &::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(15, 31, 20, 0.1) 30%, rgba(15, 31, 20, 0.85) 100%);
   }
+}
+.travel-cover-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 2px solid rgba(var(--gold-rgb), 0.25);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  z-index: 3;
 }
 
 .travel-tag {

@@ -1,4 +1,3 @@
-<!-- pages/projects/travel/index.vue -->
 <template>
   <main class="travel-overview-page">
     <FloatingLeaves />
@@ -10,20 +9,44 @@
     <AppDivider />
     <div class="travel-grid">
       <TravelEntry
-        title="Norwegen"
-        teaser="Fjorde, Gletscher und endloses Licht im hohen Norden."
-        cover="/Norwegen-Berg.webp"
-        to="/projects/travel/norwegen"
+        v-for="(post, index) in travelPosts"
+        :key="post.to"
+        :title="post.title"
+        :teaser="post.teaser"
+        :cover="post.cover"
+        :to="post.to"
+        class="travel-grid-item"
+        :style="{ animationDelay: `${index * 0.12}s` }"
       />
-      <!-- weitere TravelEntry-Einträge hier -->
     </div>
   </main>
 </template>
-
 <script setup lang="ts">
+  interface TravelPost {
+    title: string;
+    teaser: string;
+    cover: string;
+    to: string;
+  }
+
+  // Neue Reise hinzufügen = hier einen Eintrag ergänzen!
+  const travelPosts: TravelPost[] = [
+    {
+      title: 'Norwegen',
+      teaser: 'Fjorde, Gletscher und endloses Licht im hohen Norden.',
+      cover: '/Norwegen-Berg.webp',
+      to: '/projects/travel/norwegen',
+    },
+  ];
+
   useSeoMeta({
     title: 'JaCo – Reiseberichte',
+    description:
+      'Geschichten, Bilder und Eindrücke von unterwegs — jede Reise als eigenes Kapitel.',
+    ogTitle: 'JaCo – Reiseberichte',
+    ogDescription: 'Fjorde, Gletscher und endloses Licht — Reiseberichte von JaCo.',
+    ogImage: '/Norwegen-Berg.webp',
+    twitterCard: 'summary_large_image',
   });
 </script>
-
 <style lang="scss" scoped src="./travel-overview.scss" />

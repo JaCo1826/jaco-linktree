@@ -1,3 +1,4 @@
+// nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -14,6 +15,17 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap',
+        },
+      ],
+      script: [
+        {
+          key: 'strip-landing-hash',
+          innerHTML: `
+            if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+            if (location.hash) {
+              history.replaceState(null, '', location.pathname + location.search);
+            }
+          `,
         },
       ],
     },

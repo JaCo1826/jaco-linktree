@@ -26,10 +26,7 @@
   import { onMounted, nextTick } from 'vue';
 
   onMounted(async () => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-
     await nextTick();
-
     const chapters = document.querySelectorAll('.chapter');
     const io = new IntersectionObserver(
       (entries) => {

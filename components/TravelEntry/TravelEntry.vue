@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { ref, onMounted, onUnmounted } from 'vue';
+
   interface Props {
     title: string;
     teaser: string;
@@ -7,13 +9,42 @@
     tag?: string;
     meta?: string;
   }
-  defineProps<Props>();
-</script>
+  const props = defineProps<Props>();
 
+  const loaded = ref(false);
+  const currentSrc = ref(''); // leer, bis der Observer feuert — unser Lazy-Trigger
+  const coverEl = ref<HTMLElement | null>(null);
+  let observer: IntersectionObserver | null = null;
+
+  onMounted(() => {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            currentSrc.value = props.cover;
+            observer?.disconnect();
+          }
+        });
+      },
+      { rootMargin: '200px' }
+    );
+    if (coverEl.value) observer.observe(coverEl.value);
+  });
+
+  onUnmounted(() => observer?.disconnect());
+</script>
 <template>
   <NuxtLink class="travel-entry" :to="to">
-    <div class="travel-entry-cover">
-      <img :src="cover" :alt="title" />
+    <div class="travel-entry-cover" ref="coverEl">
+      <div v-if="!loaded" class="travel-entry-spinner" aria-hidden="true"></div>
+      <img
+        v-if="currentSrc"
+        :src="currentSrc"
+        :alt="title"
+        decoding="async"
+        :class="{ 'is-loaded': loaded }"
+        @load="loaded = true"
+      />
       <span v-if="tag" class="travel-entry-tag">{{ tag }}</span>
     </div>
     <div class="travel-entry-content">
@@ -24,5 +55,4 @@
     </div>
   </NuxtLink>
 </template>
-
 <style lang="scss" scoped src="./TravelEntry.scss"></style>

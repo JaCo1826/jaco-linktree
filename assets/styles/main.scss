@@ -256,6 +256,10 @@ body::after {
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 760px) {
+  .landscape-grid img,
+  .landscape-grid video {
+    height: 46vh;
+  }
   .wildlife-grid {
     grid-template-columns: 1fr;
   }
