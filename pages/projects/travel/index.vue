@@ -34,7 +34,7 @@
     {
       title: 'Norwegen',
       teaser: 'Hohe Gebirge, Gletscher und raue Flüsse',
-      cover: '/NorwayMountainscapes.webp',
+      cover: 'NorwayMountainscapes.webp',
       to: '/projects/travel/norwegen',
     },
   ];
@@ -45,7 +45,7 @@
       'Geschichten, Bilder und Eindrücke von unterwegs — jede Reise als eigenes Kapitel.',
     ogTitle: 'JaCo – Reiseberichte',
     ogDescription: 'Fjorde, Gletscher und endloses Licht — Reiseberichte von JaCo.',
-    ogImage: '/Norwegen-Berg.webp',
+    ogImage: 'Norwegen-Berg.webp',
     twitterCard: 'summary_large_image',
   });
 </script>

@@ -25,7 +25,7 @@
     {
       type: 'video' as 'video',
       src: SAMPLE_VIDEO_2,
-      poster: '/Firefly-tbc.png',
+      poster: 'Firefly-tbc.png',
     },
     { type: 'image' as 'image', src: 'Firefly-tbc.png' },
     { type: 'image' as 'image', src: 'Firefly-tbc.png' },

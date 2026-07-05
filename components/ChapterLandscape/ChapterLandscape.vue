@@ -22,7 +22,7 @@
 
   const landscapeFeature = {
     type: 'image' as 'image' | 'video',
-    src: '/NorwayMountainscapes.webp',
+    src: 'NorwayMountainscapes.webp',
     poster: '',
   };
 </script>
