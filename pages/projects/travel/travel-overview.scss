@@ -1,0 +1,33 @@
+.travel-overview-page {
+  position: relative;
+  z-index: 2;
+  padding: 130px 8vw 100px;
+}
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  margin-bottom: 22px;
+}
+.page-copy {
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--sage);
+  margin-bottom: 30px;
+}
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 50px;
+}
+.travel-grid-item {
+  opacity: 0;
+  animation: fadeUp 0.8s ease both;
+}
+@media (max-width: 760px) {
+  .travel-overview-page {
+    padding: 90px 7vw 70px;
+  }
+}

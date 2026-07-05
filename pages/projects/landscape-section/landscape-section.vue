@@ -33,6 +33,8 @@
       </div>
     </div>
   </main>
+
+  <AppFooter />
 </template>
 
 <script setup lang="ts">

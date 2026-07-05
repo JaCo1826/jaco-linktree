@@ -1,0 +1,33 @@
+.bio-section {
+  padding: 70px 8vw 30px;
+}
+.bio-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.bio-portrait {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(var(--gold-rgb), 0.25);
+}
+.bio-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+}
+.bio-text .eyebrow {
+  margin-bottom: 8px;
+}
+.bio-text p.bio-copy {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--sage);
+  max-width: 50ch;
+}
