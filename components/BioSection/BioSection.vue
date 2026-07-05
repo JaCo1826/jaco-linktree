@@ -2,14 +2,15 @@
   <section class="chapter bio-section" id="about">
     <div class="bio-inner">
       <div class="bio-portrait">
-        <img src="https://picsum.photos/seed/jaco-bio/200/200" alt="JaCo" />
+        <img src="/profile_1mb-jaco.webp" alt="JaCo" />
       </div>
       <div class="bio-text">
         <p class="eyebrow">Über mich</p>
         <p class="bio-copy">
-          Ich bin JaCo — Video- und Fotograf mit einer Schwäche für Wald, Wildnis und die Straße
-          dazwischen. Wenn ich nicht hinter der Kamera stehe, sitze ich meist vor dem Editor und
-          baue an genau dieser Website.
+          Ich bin JaCo (oder auch Colin) – ein Video- und Fotograf, der die Ruhe und Gelassenheit
+          der Natur am meisten schätzt. Von Wald und Wildnis bis zur Straße dazwischen macht es
+          unglaublich viel Spaß, die Welt zu erkunden und sie festzuhalten. Erinnerungen sind am
+          Ende das, was uns ausmacht.
         </p>
       </div>
     </div>

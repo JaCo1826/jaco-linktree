@@ -4,13 +4,21 @@
 
 <template>
   <TravelPost
-    title="Fjorde und endloses Licht"
+    title="Hohe Gebirge, Gletscher und raue Flüsse"
     tag="Norwegen"
-    meta="Reise · Juni 2025 · 12 Tage"
-    cover="/Norwegen-Berg.webp"
+    meta="Reise · Juli 2025 · 15 Tage"
+    cover="/NorwayMountainscapes.webp"
   >
-    <p>Zwölf Tage entlang der Fjorde, immer mit der Kamera griffbereit...</p>
+    <p>Endlose weiten...</p>
     <PullQuote>"Das Licht hier kennt keine Eile."</PullQuote>
-    <p>Die besten Aufnahmen entstanden dort, wo der Plan...</p>
+    <p>
+      Der Urlaub war wahrlich mehr als eine Expedition. In Norwegen war es möglich Energie zu tanken
+      und zu stauenen. Unberührte Landschaften, nirgend Gebäude oder Anzeichen davon. Einfach nur
+      die Gelassenheit der Natur und ihr raue Brutalität. Highlight war hier der Galdhøppigen.
+
+      <br />
+      <br />
+      DIESER TEXT WIRD NOCH WEITER GESCHRIEBEN!
+    </p>
   </TravelPost>
 </template>

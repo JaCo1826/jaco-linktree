@@ -33,8 +33,8 @@
   const travelPosts: TravelPost[] = [
     {
       title: 'Norwegen',
-      teaser: 'Fjorde, Gletscher und endloses Licht im hohen Norden.',
-      cover: '/Norwegen-Berg.webp',
+      teaser: 'Hohe Gebirge, Gletscher und raue Flüsse',
+      cover: '/NorwayMountainscapes.webp',
       to: '/projects/travel/norwegen',
     },
   ];

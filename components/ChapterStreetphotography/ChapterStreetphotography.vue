@@ -3,7 +3,7 @@
     <p class="eyebrow">Kapitel III — Kontaktbogen</p>
     <h2 class="street-heading">STREET</h2>
     <p class="chapter-copy">
-      Unscharfe Ränder, harte Kontraste. Die Straße erzählt am ehrlichsten, wenn niemand stillhält.
+      Symmetrie, klare Farben und Ordnung. Klare Linien, in denen man sich verlieren kann.
     </p>
     <NuxtLink
       class="chapter-link"
@@ -29,17 +29,16 @@
 </template>
 
 <script setup lang="ts">
-  const SAMPLE_VIDEO_3 =
-    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4';
+  const SAMPLE_VIDEO_3 = '';
 
   const streetMedia = [
-    { type: 'image' as 'image', src: 'https://picsum.photos/seed/jaco-street-a/700/880' },
+    { type: 'image' as 'image', src: '/Firefly-tbc.png' },
     {
       type: 'video' as 'video',
       src: SAMPLE_VIDEO_3,
-      poster: 'https://picsum.photos/seed/jaco-street-b/700/880',
+      poster: 'Firefly-tbc.png',
     },
-    { type: 'image' as 'image', src: 'https://picsum.photos/seed/jaco-street-c/700/880' },
+    { type: 'image' as 'image', src: 'Firefly-tbc.png' },
   ];
 </script>
 

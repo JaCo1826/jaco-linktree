@@ -4,9 +4,7 @@
 
     <h1 class="name">Ja<span>Co</span></h1>
     <p class="role">Videographer &nbsp;·&nbsp; Photographer</p>
-    <p class="bio">
-      TEXT = WIP || Geschichten zwischen Wald, Wildnis und Straße — eingefangen mit Geduld.
-    </p>
+    <p class="bio">Geschichten zwischen Wald, Wildnis und Straße</p>
 
     <a class="scroll-cue" href="#showcase">
       Portfolio entdecken

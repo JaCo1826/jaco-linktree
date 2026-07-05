@@ -12,7 +12,7 @@
   const props = defineProps<Props>();
 
   const loaded = ref(false);
-  const currentSrc = ref(''); // leer, bis der Observer feuert — unser Lazy-Trigger
+  const currentSrc = ref('');
   const coverEl = ref<HTMLElement | null>(null);
   let observer: IntersectionObserver | null = null;
 
