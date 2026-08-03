@@ -14,7 +14,7 @@
     <ImageSplitShowcase id="showcase" />
 
     <ChapterLandscape id="landscape" />
-    <ChapterWildlife id="wildlife" />
+    <!-- <ChapterWildlife id="wildlife" /> -->
     <ChapterStreetphotography id="streetphotography" />
     <MoreSection />
     <BioSection />

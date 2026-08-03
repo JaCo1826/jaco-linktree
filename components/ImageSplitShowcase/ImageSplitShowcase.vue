@@ -78,16 +78,18 @@
       imgMain: `${basePath}NorwayMountainscapes.webp`,
       target: '/projects/landscape-section',
     },
+    /* FUTURE
     {
       title: 'Wildlife',
       subtitle: 'Moments of stillness & encounter',
       imgMain: `${basePath}Firefly-tbc.png`,
       target: '/projects/wildlife-section',
     },
+     */
     {
       title: 'Streetphotography',
       subtitle: 'Urban rhythm & architectural symmetry',
-      imgMain: `${basePath}Firefly-tbc.png`,
+      imgMain: `${basePath}DSC_5875.webp`,
       target: '/projects/streetphotography-section',
     },
   ];

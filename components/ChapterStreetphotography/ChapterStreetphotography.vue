@@ -1,6 +1,6 @@
 <template>
   <section class="chapter">
-    <p class="eyebrow">Kapitel III — Kontaktbogen</p>
+    <p class="eyebrow">Kapitel II</p>
     <h2 class="street-heading">STREET</h2>
     <p class="chapter-copy">
       Symmetrie, klare Farben und Ordnung. Klare Linien, in denen man sich verlieren kann.
@@ -32,13 +32,13 @@
   const SAMPLE_VIDEO_3 = '';
 
   const streetMedia = [
-    { type: 'image' as 'image', src: 'Firefly-tbc.png' },
+    { type: 'image' as 'image', src: 'DSC_5875.webp' },
     {
       type: 'video' as 'video',
       src: SAMPLE_VIDEO_3,
-      poster: 'Firefly-tbc.png',
+      poster: 'DSC_6113.webp',
     },
-    { type: 'image' as 'image', src: 'Firefly-tbc.png' },
+    { type: 'image' as 'image', src: 'DSC_6033.webp' },
   ];
 </script>
 
