@@ -4,3 +4,4 @@ dist
 .nuxt
 coverage
 *.md
+pnpm-lock.yaml
