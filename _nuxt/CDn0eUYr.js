@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as o,a as _}from"./CbMEk2DA.js";const a={},c={class:"divider"};function t(r,e){return n(),o("div",c,[...e[0]||(e[0]=[_("span",{class:"divider-icon"},"✦",-1)])])}const d=Object.assign(s(a,[["render",t],["__scopeId","data-v-8f1abf8f"]]),{__name:"AppDivider"});export{d as _};

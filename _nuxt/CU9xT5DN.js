@@ -1,0 +1,1 @@
+import e from"./BLYfy_Rp.js";import{e as o,c as t,b as r,o as a}from"./CbMEk2DA.js";import"./CDn0eUYr.js";import"./C0U4vCzg.js";import"./Cv-FQ3Te.js";const p={class:"page"},l=o({__name:"index",setup(c){return(n,s)=>(a(),t("div",p,[r(e)]))}});export{l as default};

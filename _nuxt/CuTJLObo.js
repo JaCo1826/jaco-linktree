@@ -1,0 +1,1 @@
+import{_ as e}from"./Q6ogloCq.js";import{e as o,c as t,b as _,o as a,_ as s}from"./CbMEk2DA.js";const n={class:"page"},c=o({__name:"index",setup(r){return(p,d)=>(a(),t("div",n,[_(e)]))}}),f=s(c,[["__scopeId","data-v-a06b6d29"]]);export{f as default};

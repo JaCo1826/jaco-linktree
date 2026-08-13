@@ -1,0 +1,1 @@
+import{_ as t,o as c,c as o,b as n,X as _}from"./CbMEk2DA.js";const a={},s={class:"app-container"};function r(p,d){const e=_;return c(),o("div",s,[n(e)])}const i=t(a,[["render",r]]);export{i as default};
