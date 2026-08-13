@@ -2,6 +2,7 @@
   <div class="links">
     <div v-for="link in links" :key="link.href" class="link-item">
       <a :href="link.href" target="_blank" rel="noopener" class="link-btn">
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="link-icon" v-html="link.icon" />
         <div class="link-text">
           <span class="link-text-main">{{ link.label }}</span>

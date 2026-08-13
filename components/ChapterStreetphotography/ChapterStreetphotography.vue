@@ -19,7 +19,7 @@
         <video v-else autoplay muted loop playsinline :poster="item.poster || ''">
           <source :src="item.src" type="video/mp4" />
         </video>
-        <div class="scan"></div>
+        <div class="scan" />
         <svg class="frame-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
           <rect x="0" y="0" width="100" height="100" />
         </svg>
@@ -32,13 +32,13 @@
   const SAMPLE_VIDEO_3 = '';
 
   const streetMedia = [
-    { type: 'image' as 'image', src: 'DSC_5875.webp' },
+    { type: 'image' as const, src: 'DSC_5875.webp' },
     {
-      type: 'video' as 'video',
+      type: 'video' as const,
       src: SAMPLE_VIDEO_3,
       poster: 'DSC_6113.webp',
     },
-    { type: 'image' as 'image', src: 'DSC_6033.webp' },
+    { type: 'image' as const, src: 'DSC_6033.webp' },
   ];
 </script>
 

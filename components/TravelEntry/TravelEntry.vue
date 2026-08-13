@@ -35,8 +35,8 @@
 </script>
 <template>
   <NuxtLink class="travel-entry" :to="to">
-    <div class="travel-entry-cover" ref="coverEl">
-      <div v-if="!loaded" class="travel-entry-spinner" aria-hidden="true"></div>
+    <div ref="coverEl" class="travel-entry-cover">
+      <div v-if="!loaded" class="travel-entry-spinner" aria-hidden="true" />
       <img
         v-if="currentSrc"
         :src="currentSrc"

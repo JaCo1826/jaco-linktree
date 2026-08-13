@@ -1,9 +1,9 @@
 <template>
   <footer class="footer">
     <div class="footer-line">
-      <div class="footer-dot"></div>
+      <div class="footer-dot" />
       <p class="footer-loc">📍 Germany</p>
-      <div class="footer-dot"></div>
+      <div class="footer-dot" />
     </div>
 
     <div class="impressum-section">

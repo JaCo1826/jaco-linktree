@@ -23,12 +23,12 @@
 
   const wildlifeMedia = [
     {
-      type: 'video' as 'video',
+      type: 'video' as const,
       src: SAMPLE_VIDEO_2,
       poster: 'Firefly-tbc.png',
     },
-    { type: 'image' as 'image', src: 'Firefly-tbc.png' },
-    { type: 'image' as 'image', src: 'Firefly-tbc.png' },
+    { type: 'image' as const, src: 'Firefly-tbc.png' },
+    { type: 'image' as const, src: 'Firefly-tbc.png' },
   ];
 </script>
 
