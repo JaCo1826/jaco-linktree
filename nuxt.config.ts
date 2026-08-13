@@ -4,9 +4,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
 
+  modules: ['@nuxt/eslint'],
+
+  eslint: {
+    config: {
+      stylistic: false,
+    },
+  },
+
   app: {
     baseURL: '/jaco-linktree/',
-
     head: {
       base: { href: '/jaco-linktree/' },
       link: [
@@ -30,7 +37,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
   nitro: {
     baseURL: 'jaco-linktree',
     prerender: {
@@ -39,13 +45,10 @@ export default defineNuxtConfig({
       failOnError: false,
     },
   },
-
   experimental: {
     payloadExtraction: false,
   },
-
   css: ['~/assets/styles/_reset.scss', '~/assets/styles/main.scss'],
-
   vite: {
     css: {
       preprocessorOptions: {

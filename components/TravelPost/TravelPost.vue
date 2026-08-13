@@ -20,7 +20,7 @@
 <template>
   <article>
     <div class="travel-cover">
-      <div v-if="!loaded" class="travel-cover-spinner" aria-hidden="true"></div>
+      <div v-if="!loaded" class="travel-cover-spinner" aria-hidden="true" />
       <img
         ref="imgEl"
         :src="cover"

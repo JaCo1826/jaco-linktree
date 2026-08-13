@@ -3,11 +3,11 @@
     <div class="avatar-ring-2" />
     <div class="avatar-ring" />
     <img
+      v-show="!isLoading"
       ref="avatarImg"
       class="avatar"
       :src="src"
       alt="JaCo"
-      v-show="!isLoading"
       @load="isLoading = false"
       @error="isLoading = false"
     />

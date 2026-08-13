@@ -8,7 +8,14 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "format": "prettier --write ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:style": "stylelint \"**/*.{scss,vue}\"",
+    "lint:style:fix": "stylelint \"**/*.{scss,vue}\" --fix",
+    "typecheck": "nuxi typecheck",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "nuxt": "^4.4.2",
@@ -17,7 +24,29 @@
   },
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "devDependencies": {
+    "@nuxt/eslint": "^1.17.0",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "postcss-html": "^2.0.0",
     "prettier": "^3.8.1",
-    "sass": "^1.98.0"
+    "sass": "^1.98.0",
+    "stylelint": "^17.14.1",
+    "stylelint-config-recommended-vue": "^2.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.2.0",
+    "typescript": "^5.9.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ],
+    "*.{scss,vue}": [
+      "stylelint --fix"
+    ],
+    "*.{js,ts,vue,scss,json,md}": [
+      "prettier --write"
+    ]
   }
 }

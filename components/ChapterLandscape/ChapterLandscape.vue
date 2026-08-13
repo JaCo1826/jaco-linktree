@@ -8,8 +8,12 @@
     </p>
     <NuxtLink class="chapter-link" to="/projects/landscape-section">Galerie ansehen →</NuxtLink>
     <div class="landscape-grid">
-      <div class="landscape-glow"></div>
-      <img v-if="landscapeFeature.type === 'image'" :src="landscapeFeature.src" alt="" />
+      <div class="landscape-glow" />
+      <img
+        v-if="landscapeFeature.type === 'image'"
+        :src="landscapeFeature.src"
+        alt="Mountainscape"
+      />
       <video v-else autoplay muted loop playsinline :poster="landscapeFeature.poster || ''">
         <source :src="landscapeFeature.src" type="video/mp4" />
       </video>
@@ -18,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+  // eslint-disable-next-line
   const SAMPLE_VIDEO_1 = '';
 
   const landscapeFeature = {

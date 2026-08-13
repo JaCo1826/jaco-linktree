@@ -1,5 +1,5 @@
 <template>
-  <section class="chapter bio-section" id="about">
+  <section id="about" class="chapter bio-section">
     <div class="bio-inner">
       <div class="bio-portrait">
         <img src="/profile_1mb-jaco.webp" alt="JaCo" />

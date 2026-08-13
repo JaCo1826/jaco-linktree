@@ -13,18 +13,18 @@
         </div>
 
         <!-- Vignette -->
-        <div class="slide-vignette" aria-hidden="true"></div>
+        <div class="slide-vignette" aria-hidden="true" />
 
         <!-- Textinhalt -->
         <div class="slide-content">
           <div class="slide-eyebrow" aria-hidden="true">
-            <span class="eyebrow-line"></span>
+            <span class="eyebrow-line" />
             <span class="eyebrow-text">Photography Series</span>
           </div>
           <h1 class="slide-title">
             <span class="title-inner">{{ slide.title }}</span>
           </h1>
-          <div class="slide-underline" aria-hidden="true"></div>
+          <div class="slide-underline" aria-hidden="true" />
           <p class="slide-sub">{{ slide.subtitle }}</p>
         </div>
       </li>
@@ -39,7 +39,7 @@
         :class="{ cur: currentIndex === index }"
         @click="handleManualSelect(index)"
       >
-        <span class="prog-fill" :style="progressStyle(index)"></span>
+        <span class="prog-fill" :style="progressStyle(index)" />
       </li>
     </ul>
 
@@ -50,8 +50,8 @@
 
     <!-- Navigations-Pfeile rechts unten -->
     <div class="slide-nav">
-      <button class="nav-btn" @click="handlePrev" aria-label="Vorheriger Slide">&#8592;</button>
-      <button class="nav-btn" @click="handleNext" aria-label="Nächster Slide">&#8594;</button>
+      <button class="nav-btn" aria-label="Vorheriger Slide" @click="handlePrev">&#8592;</button>
+      <button class="nav-btn" aria-label="Nächster Slide" @click="handleNext">&#8594;</button>
     </div>
   </div>
 </template>
