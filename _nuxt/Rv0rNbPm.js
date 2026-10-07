@@ -1,0 +1,1 @@
+import e from"./DFofH7_a.js";import{e as o,c as t,b as r,o as a}from"./DhPrbuiO.js";import"./CvAIYqt3.js";import"./DdlXEigP.js";import"./KHIdE7Ap.js";import"./Bm1uibe5.js";const c={class:"page"},u=o({__name:"index",setup(n){return(p,s)=>(a(),t("div",c,[r(e)]))}});export{u as default};
