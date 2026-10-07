@@ -3,9 +3,10 @@
   <h1>Impressum</h1>
 
   <p>
-    Colin Noel Held<br />
+    JaCo Filmproductions<br />
+    Inhaber: Colin Noel Held<br />
     Von Bodelschwingh Str. 10<br />
-    Soltau, Deutschland<br />
+    29614 Soltau, Deutschland<br />
     Photographer / Videographer
   </p>
 
