@@ -35,4 +35,16 @@ Locally preview production build:
 pnpm preview
 ```
 
+Run prettier check
+
+```bash
+pnpm format:check
+```
+
+Write prettier format
+
+```bash
+pnpm format
+```
+
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

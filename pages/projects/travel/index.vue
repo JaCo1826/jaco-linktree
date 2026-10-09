@@ -37,6 +37,12 @@
       cover: 'NorwayMountainscapes.webp',
       to: '/projects/travel/norwegen',
     },
+    {
+      title: 'Tokyo',
+      teaser: 'Gerade Straßen, hohe Wolkenkratzer und alles voller grün',
+      cover: 'DSC_7511.webp',
+      to: '/projects/travel/tokyo',
+    },
   ];
 
   useSeoMeta({

@@ -15,9 +15,14 @@
     <div class="street-grid">
       <div v-for="(item, index) in streetMedia" :key="index" class="street-card">
         <span class="frame-no">{{ String(index + 1).padStart(3, '0') }}</span>
-        <img v-if="item.type === 'image'" :src="item.src" alt="" />
-        <video v-else autoplay muted loop playsinline :poster="item.poster || ''">
-          <source :src="item.src" type="video/mp4" />
+        <img v-if="item.type === 'image'" :src="item.src" alt="" loading="lazy" />
+        <video v-else autoplay muted loop playsinline preload="metadata" :poster="item.poster">
+          <source
+            v-for="source in item.sources"
+            :key="source.src"
+            :src="source.src"
+            :type="source.type"
+          />
         </video>
         <div class="scan" />
         <svg class="frame-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -29,16 +34,17 @@
 </template>
 
 <script setup lang="ts">
-  const SAMPLE_VIDEO_3 = '';
-
   const streetMedia = [
     { type: 'image' as const, src: 'DSC_5875.webp' },
     {
       type: 'video' as const,
-      src: SAMPLE_VIDEO_3,
-      poster: 'DSC_6113.webp',
+      sources: [
+        { src: 'shibuya-crossing-from-above-night.webm', type: 'video/webm' },
+        { src: 'shibuya-crossing-from-above-night.mp4', type: 'video/mp4' },
+      ],
+      poster: 'shibuya-crossing-from-above-night-poster.jpg',
     },
-    { type: 'image' as const, src: 'DSC_6033.webp' },
+    { type: 'image' as const, src: 'DSC_7008.webp' },
   ];
 </script>
 
